@@ -8608,7 +8608,7 @@ input, select, textarea {
 	top: 40px;
 	right: 40px;
 	width: 50px;
-	height: 50px;
+	height: 30px;
 	display: block;
 	cursor: pointer;
 	-webkit-transition: opacity 0.2s linear;
@@ -8633,14 +8633,14 @@ input, select, textarea {
 	transition: all 0.4s ease;
   }
   .open span:nth-child(1) {
-	margin-top: 10px;
+	margin-top: -5px;
 	z-index: 9;
   }
   .open span:nth-child(2) {
-	margin-top: 25px;
+	margin-top: 10px;
   }
   .open span:nth-child(3) {
-	margin-top: 40px;
+	margin-top: 25px;
   }
   
   .sub-menu {
@@ -8729,3 +8729,65 @@ input, select, textarea {
 	margin-right: 168px;
   }
 /* Hamburger Ends */
+
+/* Timeline Begins */
+main {
+	min-width: 300px;
+	max-width: 500px;
+	margin: auto;
+}
+.timeline p {
+	font-size: 1em;
+	line-height: 1.75em;
+	border-top: 3px solid;
+	border-image: linear-gradient(to right, #B5D4DD 0%, #DDBEB5 100%);
+	border-image-slice: 1;
+	border-width: 3px;
+	margin: 0;
+	padding: 40px;
+	counter-increment: section;
+	position: relative;
+  }
+  /*numbers*/
+  .timeline p:before {
+	content: counter(section);
+	position: absolute;
+	border-radius: 50%;
+	height: 1.75em;
+	width: 1.75em;
+	padding:5px;
+	background-color: #273765;
+	text-align: center;
+	line-height: 1.25em;
+	color: #fff;
+	font-size: 1em;
+  }
+  /*odd number borders*/
+  .timeline p:nth-child(odd) {
+	border-right: 3px solid;
+	padding-left: 0;
+  }
+  .timeline p:nth-child(odd):before {
+	left: 100%; 
+	margin-left: -20px;
+  }
+  /*even number borders*/
+  .timeline p:nth-child(even) {
+	border-left: 3px solid;
+	padding-right: 0;
+  }
+  .timeline p:nth-child(even):before {
+	right: 100%; 
+	margin-right: -20px;
+  }
+  /*handle first and last*/
+  .timeline p:first-child {
+	border-top: 0;
+	border-top-right-radius:0;
+	border-top-left-radius:0;
+  }
+  .timeline p:last-child {
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:0;
+  }
+/* Timeline ends */
